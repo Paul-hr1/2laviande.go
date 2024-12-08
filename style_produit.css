@@ -38,6 +38,10 @@ h1{
     color: crimson;
 }
 
+#buffet{
+    max-width: 100%;
+}
+
 #menu {
     display: flex;
     max-width: 1200px;
