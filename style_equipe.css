@@ -46,6 +46,10 @@ body {
 
 }
 
+#tourner{
+    transform: rotate(90);
+}
+
 .photos{
     margin:30px;
     display:flex;
