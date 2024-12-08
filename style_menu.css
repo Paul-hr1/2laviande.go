@@ -43,6 +43,10 @@ navbar {
     }
 }     
 
+iframe{
+    display: block;
+    margin: auto;
+}
 
 
 #premium{
