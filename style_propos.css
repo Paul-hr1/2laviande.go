@@ -1,0 +1,118 @@
+navbar {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed; 
+    top: 0;     
+    a:not(#logo){
+        /*boites*/
+        background-color:  rgb(140, 81, 4);
+        width: 100px;
+        height: 40px;
+        box-sizing: border-box;   /* remplissage du box*/
+        padding: 10px;
+        margin: 15px;
+        border-radius: 40% 40% 40% 40%;
+        text-align: center;        
+        text-decoration: none; /*enlever le soulignement*/
+        color : white;
+        font-weight: large;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;   
+        transition: all 0.3s ease;     
+    }
+    a:not(#logo):hover{
+        transform: scale(1.2);
+        background-color: #aa0303;
+        
+    }
+}  
+
+
+h1{
+    text-align: center;
+    color: crimson;
+    margin-top: 100px;
+}
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h4{
+    background-image:url(images/fond-teck-texture-bois-naturelle-exclusive-motifs-photo-tres-haute-resolution.png);
+    color:white;
+    padding:50px;
+}
+
+table{
+
+    border-collapse: separate; /* Nécessaire pour que border-spacing fonctionne */
+    border-spacing: 50px; /* Espace entre les cellules (colonnes et lignes) */
+}
+#arrow{
+    top:500px;
+    margin-left:auto;
+    width:30px;
+    height:2000px;
+    background-color: brown;
+
+
+}
+
+table h4, table img{
+        animation-name:shade;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        
+}
+
+@keyframes shade{
+    0% {opacity: 0;}
+    50%{opacity: 50;}
+    100% {opacity: 100;}
+}
+
+.footer {
+    background-color: #333; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    padding: 20px 0px;
+    text-align: center;
+   
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    
+    max-width: 700px; /* Largeur maximale */
+    margin: 0 auto; /* Centrer le contenu */   
+}
+
+
+.footer-links {
+    background-color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center; /* Centrer les liens */
+    gap: 15px; /* Espacement entre les liens */
+    
+}
+.footer-links img:hover{
+    transition: all 0.3s ease;
+    transform: scale(1.2);
+}
+
+.footer-links a {
+    
+    text-decoration: none;
+    color:#333;
+    
+}
