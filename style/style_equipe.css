@@ -1,23 +1,23 @@
 navbar {
     width: 100%;
-    margin: 0;
-    padding: 0;
-    position: fixed; 
+    margin: 0; /*marge tout autour de la navbar*/
+    padding: 0; /* écart à l'intérieur de la navbar*/
+    position: fixed; /* la navbar reste en haut quand on défile*/
     top: 0;     
-    a:not(#logo){
-        /*boites*/
+    a:not(#logo){ /* comprend les liens sauf le logo*/
+        /* création de boites*/
         background-color:  rgb(140, 81, 4);
-        width: 100px;
+        width: 100px; 
         height: 40px;
-        box-sizing: border-box;   /* remplissage du box*/
+        box-sizing: border-box;   /* remplissage de la boite*/
         padding: 10px;
         margin: 15px;
-        border-radius: 40% 40% 40% 40%;
+        border-radius: 40% 40% 40% 40%; /* arrondi les coins de la boite */
         text-align: center;        
         text-decoration: none; /*enlever le soulignement*/
         color : white;
         font-weight: large;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;   
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;  /*police*/ 
         transition: all 0.3s ease;     
     }
     a:not(#logo):hover{
@@ -26,7 +26,7 @@ navbar {
         
     }
 }  
-/* Reset de base */
+
 body, ul, li {
     margin: 0;
     padding: 0;
