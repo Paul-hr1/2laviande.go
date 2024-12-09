@@ -86,7 +86,7 @@ iframe {
 }
 
 .premium ul li::before {
-    content: '✔️';
+    content: '✅';
     margin-right: 10px;
 }
 
