@@ -69,7 +69,7 @@ p{
 .premium h2 {
     font-size: 30px;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
+    text-shadow: 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000; /*ombre */
 
 }
 
