@@ -46,9 +46,11 @@ navbar {
 
 iframe {
     border-radius: 15px;   
-    display: block;   
-    margin: auto;     
-    /*transform: scale(1.5);   */ 
+    display: block; 
+    position:relative;
+    margin-top: 400px;  
+    margin: auto; 
+    transform: scale(2);    
 }
 
 .premium {
