@@ -1,0 +1,128 @@
+
+body{
+    background-image: url(images/fond-de-bois-peint-blanc.webp);
+    background-size: cover;
+}
+    
+navbar {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed; 
+    top: 0;     
+    a:not(#logo){
+        /*boites*/
+        background-color:  rgb(140, 81, 4);
+        width: 100px;
+        height: 40px;
+        box-sizing: border-box;   /* remplissage du box*/
+        padding: 10px;
+        margin: 15px;
+        border-radius: 40% 40% 40% 40%;
+        text-align: center;        
+        text-decoration: none; /*enlever le soulignement*/
+        color : white;
+        font-weight: large;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;   
+        transition: all 0.3s ease;     
+    }
+    a:not(#logo):hover{
+        transform: scale(1.2);
+        background-color: #aa0303;
+        
+    }
+}  
+
+h1{
+    text-align: center;
+    color: crimson;
+}
+
+#buffet{
+    max-width: 100%;
+}
+
+#menu {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+}
+.viande{
+    width: 25%;
+    padding: 2%;
+    margin: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+    border-radius: 20%;  
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    h2{
+        font-family: Impact;
+    }
+    transition: all 0.3s ease; /* Ajoute une transition fluide */
+    
+}
+.viande:hover{ 
+    background-color:#333; /* Change la couleur de fond en gris */
+    transform: scale(1.2);  /* Augmente la taille */
+    color: white;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.content {
+    padding: 20px;
+}
+
+.footer {
+    background-color: #333; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    padding: 20px 0px;
+    text-align: center;
+   
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    
+    max-width: 700px; /* Largeur maximale */
+    margin: 0 auto; /* Centrer le contenu */   
+}
+
+
+.footer-links {
+    background-color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center; /* Centrer les liens */
+    gap: 15px; /* Espacement entre les liens */
+    
+}
+.footer-links img:hover{
+    transition: all 0.3s ease;
+    transform: scale(1.2);
+}
+
+.footer-links a {
+    
+    text-decoration: none;
+    color:#333;
+    
+}
