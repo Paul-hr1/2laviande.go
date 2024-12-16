@@ -2,7 +2,7 @@
 #titre{
     color: red;   
     font-size: xx-large; /* xxsmall medium xxlarge larger smaller*/
-    font-family: sans-serif,Verdana;
+    font-family: sans-serif,Verdana; /* police */
     font-weight: large;
     text-align: center;
     margin: auto;
@@ -16,24 +16,24 @@
 
 navbar {
     width: 100%;
-    margin: 0;
-    padding: 0;
-    position: fixed; 
+    margin: 0; /*marge tout autour de la navbar*/
+    padding: 0; /* écart à l'intérieur de la navbar*/
+    position: fixed; /* la navbar reste en haut quand on défile*/
     top: 0;     
-    a:not(#logo){
-        /*boites*/
+    a:not(#logo){ /* comprend les liens sauf le logo*/
+        /* création de boites*/
         background-color:  rgb(140, 81, 4);
-        width: 100px;
+        width: 100px; 
         height: 40px;
-        box-sizing: border-box;   /* remplissage du box*/
+        box-sizing: border-box;   /* remplissage de la boite*/
         padding: 10px;
         margin: 15px;
-        border-radius: 40% 40% 40% 40%;
+        border-radius: 40% 40% 40% 40%; /* arrondi les coins de la boite */
         text-align: center;        
         text-decoration: none; /*enlever le soulignement*/
         color : white;
         font-weight: large;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;   
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;  /*police*/ 
         transition: all 0.3s ease;     
     }
     a:not(#logo):hover{
@@ -45,25 +45,22 @@ navbar {
 
 
 iframe {
-    border-radius: 15px;   
+    border-radius: 15px;  /*arrondi les bords */ 
     display: block;   
     margin: auto;    
-    /*transform: scale(1.5);   */ 
 }
 
 .premium {
-    background: linear-gradient(135deg, rgb(136, 245, 2),rgb(255, 68, 0));
+    background: linear-gradient(135deg, rgb(136, 245, 2),rgb(255, 68, 0)); /*dégradé de couleur en fond */
     color: #fff;
     width: 550px;
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-    margin-left: 30%;
+    margin-left: 30%; /* écart à gauche */
     margin-bottom:10%;
     margin-top:10%;
     display:block;
-
-    
     
 }
 p{
@@ -72,7 +69,7 @@ p{
 .premium h2 {
     font-size: 30px;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
+    text-shadow: 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000; /*ombre */
 
 }
 
