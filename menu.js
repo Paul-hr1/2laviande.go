@@ -8,3 +8,6 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
     console.log(date);
     console.log(heure);
 } 
+
+
+window.alert("Hello world!");
