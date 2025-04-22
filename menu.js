@@ -9,5 +9,8 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
     console.log(heure);
 } 
 
-
+function main(){
+    displayDateTime();
+}
+main()
 alert("non");
