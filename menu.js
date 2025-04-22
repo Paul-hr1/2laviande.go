@@ -10,9 +10,4 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
 } 
 
 
-<dialog open>
-  <p>Salutations, à tous et à toutes !</p>
-  <form method="dialog">
-    <button>OK</button>
-  </form>
-</dialog>
+alert("non");
