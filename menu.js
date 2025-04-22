@@ -10,4 +10,4 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
 } 
 
 
-window.alert("Hello world!");
+alert("non");
