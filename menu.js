@@ -10,7 +10,7 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
 } 
 
 function main(){
-    displayDateTime();
+    setInterval(displayDateTime,1000);
 }
 main()
 alert("non");
