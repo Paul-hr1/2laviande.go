@@ -69,20 +69,30 @@ function init_chrono(){
     addSegments("hours-units");
     addSegments("minutes-tens");
     addSegments("minutes-units");
-    let date = new Date();
-    let time = date.toLocaleTimeString('fr-FR'); // => obtention du temps réelle
-    time = "00:00"
-    return time;
 }
 
 function display_time_chrono(){
-    
+    let date = new Date();
+    let time = date.toLocaleTimeString('fr-FR'); // => obtention du temps réelle
+    time = 
     
     updateDigit("hours-tens",time[0]); // affichage du temps en fonction de chaques cadrans
     updateDigit("hours-units", time[1]);
     updateDigit("minutes-tens", time[3]);
     updateDigit("minutes-units", time[4]);
     
+}
+
+function displayDecrementSconds(){ // fonction pour afficher le compte des secondes
+    let seconde = 0;
+ 
+    document.getElementById("suite").innerText= "temps passé sur ce merveilleux site";
+    document.getElementById("temps").innerText = seconde + 1 + "s";
+ 
+    let fin = setInterval(function (){
+        document.getElementById("temps").innerText = seconde+"s";
+        seconde++; // decrémente seconde
+        },1000)
 }
 main(){
     let time = init_chrono();
