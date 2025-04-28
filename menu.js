@@ -15,10 +15,7 @@ function delay(){
 }
 function loader(){
     let event = null;
-}
-function main(){
-    setInterval(displayDateTime,1000);
-}
+} 
 
 function addSegments(digitId){
 
@@ -71,10 +68,7 @@ function init_chrono(){
     addSegments("minutes-units");
 }
 
-function display_time_chrono(){
-    let date = new Date();
-    let time = date.toLocaleTimeString('fr-FR'); // => obtention du temps réelle
-    time = 
+function display_time_chrono(cadran){
     
     updateDigit("hours-tens",time[0]); // affichage du temps en fonction de chaques cadrans
     updateDigit("hours-units", time[1]);
@@ -83,18 +77,36 @@ function display_time_chrono(){
     
 }
 
-function displayDecrementSconds(){ // fonction pour afficher le compte des secondes
-    let seconde = 0;
- 
+
+
+let minutes = 0;
+let secondes = 0;
+
+
+function calcul_Timer() {
+    secondes++;
+    if (secondes == 60) {
+        secondes = 0;
+        minutes++;
+    }
+    if (minutes == 60) {
+        minutes = 0;
+        console.log("waouh cela fait 1 heure que vous êtes sur le site !!")
+    }
+    
+    let cadran = String(minutes) +" : "+ String(secondes);
+    return(cadran);
+
+
+ {
+  
     document.getElementById("suite").innerText= "temps passé sur ce merveilleux site";
-    document.getElementById("temps").innerText = seconde + 1 + "s";
- 
-    let fin = setInterval(function (){
-        document.getElementById("temps").innerText = seconde+"s";
-        seconde++; // decrémente seconde
-        },1000)
+    
+
+        
 }
 main(){
+    setInterval(displayDateTime,1000);
     let time = init_chrono();
     setInterval(display_time_chrono(),1000);
 }
