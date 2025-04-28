@@ -12,5 +12,5 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
 function main(){
     setInterval(displayDateTime,1000);
 }
-main()
+main();
 //alert("non");
