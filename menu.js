@@ -61,7 +61,8 @@ function updateDigit(digitId, value){
 
 
 function init_chrono(){
-
+    let minutes = 0;
+    let secondes = 0;
     addSegments("hours-tens");
     addSegments("hours-units");
     addSegments("minutes-tens");
@@ -70,17 +71,16 @@ function init_chrono(){
 
 function display_time_chrono(cadran){
     
-    updateDigit("hours-tens",time[0]); // affichage du temps en fonction de chaques cadrans
-    updateDigit("hours-units", time[1]);
-    updateDigit("minutes-tens", time[3]);
-    updateDigit("minutes-units", time[4]);
+    updateDigit("hours-tens",cadran[0]); // affichage du temps en fonction de chaques cadrans
+    updateDigit("hours-units", cadran[1]);
+    updateDigit("minutes-tens", cadran[3]);
+    updateDigit("minutes-units", cadran[4]);
     
 }
 
 
 
-let minutes = 0;
-let secondes = 0;
+
 
 
 function calcul_Timer() {
