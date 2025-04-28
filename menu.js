@@ -63,22 +63,29 @@ function updateDigit(digitId, value){
 
 
 
-function init(){
+function init_chrono(){
 
     addSegments("hours-tens");
     addSegments("hours-units");
     addSegments("minutes-tens");
     addSegments("minutes-units");
-}
-
-function display_time(){
     let date = new Date();
     let time = date.toLocaleTimeString('fr-FR'); // => obtention du temps réelle
+    time = "00:00"
+    return time;
+}
+
+function display_time_chrono(){
+    
+    
     updateDigit("hours-tens",time[0]); // affichage du temps en fonction de chaques cadrans
     updateDigit("hours-units", time[1]);
     updateDigit("minutes-tens", time[3]);
     updateDigit("minutes-units", time[4]);
     
 }
-main();
+main(){
+    let time = init_chrono();
+    setInterval(display_time_chrono(),1000);
+}
 //alert("non");
