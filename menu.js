@@ -9,6 +9,13 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
     console.log(heure);
 } 
 
+function delay(){
+    let produit = documen.getElementById("produits");
+    
+}
+function loader(){
+    let event =  
+}
 function main(){
     setInterval(displayDateTime,1000);
 }
