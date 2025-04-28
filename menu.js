@@ -108,6 +108,6 @@ function calcul_Timer() {
 main(){
     setInterval(displayDateTime,1000);
     let time = init_chrono();
-    setInterval(display_time_chrono(),1000);
+    setInterval(display_time_chrono,1000);
 }
-//alert("non");
+main();

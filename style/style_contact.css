@@ -19,7 +19,7 @@ navbar {
     padding: 0; /* écart à l'intérieur de la navbar*/
     position: fixed; /* la navbar reste en haut quand on défile*/
     top: 0;     
-    a:not(#logo,#heure){ /* comprend les liens sauf le logo*/
+    a:not(#logo,#heure, #date){ /* comprend les liens sauf le logo*/
         /* création de boites*/
         background-color:  rgb(140, 81, 4);
         width: 100px; 
@@ -35,7 +35,7 @@ navbar {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;  /*police*/ 
         transition: all 0.3s ease;     
     }
-    a:not(#logo, #heure):hover{
+    a:not(#logo, #heure, #date):hover{
         transform: scale(1.2);
         background-color: #aa0303;
         
