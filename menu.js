@@ -13,4 +13,4 @@ function main(){
     setInterval(displayDateTime,1000);
 }
 main()
-alert("non");
+//alert("non");
