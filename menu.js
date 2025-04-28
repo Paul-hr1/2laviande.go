@@ -19,5 +19,66 @@ function loader(){
 function main(){
     setInterval(displayDateTime,1000);
 }
+
+function addSegments(digitId){
+
+    let cadran = document.getElementById(digitId); // => identifie le bon cadran
+    
+    for(let i=0; i<=6; i++){
+        let balise = document.createElement("div"); // création d'une balise div segment
+        balise.id = `seg${i}`; // => son id
+        balise.className =`segment${i} segment off`;  // => ses classes (off par défaut)     
+        cadran.appendChild(balise); // ajout de la balise en tant qu'enfant du cadran
+    }    
+    
+
+} 
+
+function updateDigit(digitId, value){
+
+    let segmentStataddSegmentes = [
+        [1, 1, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 0, 1, 0],
+        [1, 0, 1, 1, 1, 0, 1],
+        [1, 0, 1, 1, 0, 1, 1],
+        [0, 1, 1, 1, 0, 1, 0],
+        [1, 1, 0, 1, 0, 1, 1],
+        [1, 1, 0, 1, 1, 1, 1],
+        [1, 0, 1, 0, 0, 1, 0],
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1]
+    ];
+
+    let balise = document.getElementById(digitId); // => identification du bon cadran
+    for(let i=0; i<=6; i++){
+        if(segmentStataddSegmentes[value][i] == 0){
+            balise.children[i].className =`segment${i} segment off`; // => si la valeur du tableau est 0, la balise a la classe off
+        }
+        else{
+            balise.children[i].className =`segment${i} segment`; // => sinon elle ne la plus
+        };
+    };
+}
+
+
+
+
+function init(){
+
+    addSegments("hours-tens");
+    addSegments("hours-units");
+    addSegments("minutes-tens");
+    addSegments("minutes-units");
+}
+
+function display_time(){
+    let date = new Date();
+    let time = date.toLocaleTimeString('fr-FR'); // => obtention du temps réelle
+    updateDigit("hours-tens",time[0]); // affichage du temps en fonction de chaques cadrans
+    updateDigit("hours-units", time[1]);
+    updateDigit("minutes-tens", time[3]);
+    updateDigit("minutes-units", time[4]);
+    
+}
 main();
 //alert("non");

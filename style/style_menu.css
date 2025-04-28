@@ -36,7 +36,7 @@ navbar {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;  /*police*/ 
         transition: all 0.3s ease;     
     }
-    a:not(#logo, #heure):hover{
+    a:not(#logo, #heure, #date):hover{  /*enleve l'animation de survol de la souris*/
         transform: scale(1.2);
         background-color: #aa0303;   
     }
