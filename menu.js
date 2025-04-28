@@ -16,9 +16,7 @@ function delay(){
 function loader(){
     let event = null;
 }
-function main(){
-    setInterval(displayDateTime,1000);
-}
+
 
 function addSegments(digitId){
 
@@ -84,8 +82,9 @@ function display_time_chrono(){
     updateDigit("minutes-units", time[4]);
     
 }
-main(){
+function main(){
+    setInterval(displayDateTime,1000);
     let time = init_chrono();
-    setInterval(display_time_chrono(),1000);
+    setInterval(display_time_chrono,1000);
 }
-//alert("non");
+main();
