@@ -14,7 +14,7 @@ function delay(){
     
 }
 function loader(){
-    let event =  
+    let event = null;
 }
 function main(){
     setInterval(displayDateTime,1000);
