@@ -9,7 +9,7 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
     console.log(heure);
 } 
 
-function delay(){
+/*function delay(){
     let produit = document.getElementById("produits");
     
 }
@@ -96,16 +96,16 @@ function calcul_Timer() {
     
     let cadran = String(minutes) +" : "+ String(secondes);
     return(cadran);
+}
 
-
- {
+ 
   
     document.getElementById("suite").innerText= "temps passé sur ce merveilleux site";
     
 
-        
-}
-main(){
+    */    
+
+function main(){
     setInterval(displayDateTime,1000);
     let time = init_chrono();
     setInterval(display_time_chrono,1000);
