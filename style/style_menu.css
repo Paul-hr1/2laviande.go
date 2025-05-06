@@ -120,11 +120,6 @@ p{
     background-color:rgba(242, 255, 0, 0.896);
 }
 
-#tkt {
-    text-shadow: 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
-    color: #fff; /* texte blanc */
-  }
-
   .footer {
     background-color: #333; /* Couleur de fond */
     color: white; /* Couleur du texte */
@@ -163,12 +158,11 @@ p{
     
 }
 
+.footer.clock{
 
-
-
-body{
-    background-color:black;
 }
+
+
 .segment0 { left: 20px; top: 5px; width: 60px; height: 0px; }
 .segment1 { left: 5px; top: 20px; width: 0px; height: 60px; }
 .segment2 { left: 95px; top: 20px; width: 0px; height: 60px; }
@@ -209,6 +203,8 @@ body{
     height: 200px;
 }
 
+
+
 .clock > .colon {
     font-size: 100px;
     height: 150px;
@@ -220,6 +216,11 @@ body{
 
 .off {
 
-    transition: all 0.2s linear;
+    transition: all 1.2s linear;
     opacity: 0.2;
+}
+
+.clock {
+    left: 500px;
+    
 }
