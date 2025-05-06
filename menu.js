@@ -75,18 +75,18 @@ function display_time_chrono(){
     let cadran ="";
     setInterval(function() {
         secondes++;
-        minutes = secondes/60;
+        minutes = Math.floor(secondes / 60);
         secondes = secondes % 60;
         if (minutes >= 60) {
             minutes = 0;
             console.log("waouh! Cela fait 1 heure que vous êtes sur le site !!")
         }     
-        let cadran = String(minutes) +" : "+ String(secondes);
+        cadran = String(minutes) +" : "+ String(secondes);
         
-        updateDigit("hours-tens", cadran[0]); // affichage du temps en fonction de chaques cadrans
-        updateDigit("hours-units", cadran[1]);
-        updateDigit("minutes-tens", cadran[3]);
-        updateDigit("minutes-units", cadran[4]);
+        updateDigit("hours-tens", parseInt(cadran[0])); // affichage du temps en fonction de chaques cadrans
+        updateDigit("hours-units", parseInt(cadran[1]));
+        updateDigit("minutes-tens", parseInt(cadran[3]));
+        updateDigit("minutes-units", parseInt(cadran[4]));
     },1000);   
 }
 
