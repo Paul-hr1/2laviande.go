@@ -81,9 +81,9 @@ function display_time_chrono(){
             minutes = 0;
             console.log("waouh! Cela fait 1 heure que vous êtes sur le site !!")
         }     
-        let cadran = String(minutes) +" :jjjjj "+ String(secondes);
+        let cadran = String(minutes) +" : "+ String(secondes);
         
-        updateDigit("hours-tens",cadran[0]); // affichage du temps en fonction de chaques cadrans
+        updateDigit("hours-tens", cadran[0]); // affichage du temps en fonction de chaques cadrans
         updateDigit("hours-units", cadran[1]);
         updateDigit("minutes-tens", cadran[3]);
         updateDigit("minutes-units", cadran[4]);
