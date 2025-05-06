@@ -63,6 +63,7 @@ function updateDigit(digitId, value){
 
 
 function init_chrono(){
+
     addSegments("hours-tens");
     addSegments("hours-units");
     addSegments("minutes-tens");
@@ -82,11 +83,11 @@ function display_time_chrono(){
             console.log("waouh! Cela fait 1 heure que vous êtes sur le site !!")
         }     
         cadran = String(minutes) +" : "+ String(secondes);
-        
-        updateDigit("hours-tens", parseInt(cadran[0])); // affichage du temps en fonction de chaques cadrans
-        updateDigit("hours-units", parseInt(cadran[1]));
-        updateDigit("minutes-tens", parseInt(cadran[3]));
-        updateDigit("minutes-units", parseInt(cadran[4]));
+        document.getElementById("cadran").innerText = cadran
+        updateDigit("hours-tens", cadran[0]); // affichage du temps en fonction de chaques cadrans
+        updateDigit("hours-units", cadran[1]);
+        updateDigit("minutes-tens", cadran[3]);
+        updateDigit("minutes-units", cadran[4]);
     },1000);   
 }
 
