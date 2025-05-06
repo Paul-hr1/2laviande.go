@@ -9,7 +9,7 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
     console.log(heure);
 } 
 
-function delay(){
+/*function delay(){
     let produit = document.getElementById("produits");
     
 }
