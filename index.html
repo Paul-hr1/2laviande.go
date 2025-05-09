@@ -5,14 +5,17 @@
     <link href="style/style_menu.css" rel="stylesheet">
     <title>2laviande</title>
     <script src="menu.js" defer></script>
+    <script src="contact.js" defer></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
     <navbar style="height: 70px;  background-color: grey;"> <!-- barre de navigation-->
         <img  id="logo"src="images/logo.png"  alt="logo" height="70"> <!-- met une image-->
         <a id="produits" href="produits.html" style="position: absolute; top:center; left:20%">Produits</a> <!--lien qui renvoie vers une autre page-->
-        <a id="equipe" href="equipe.html" style="position: absolute; top: center; left:40%">L'Équipe</a>   
+        <a id="equipe" href="#" onclick="confirmer('equipe.html')"  style="position: absolute; top: center; left:40%">L'Équipe</a>   
         <a id="a_propos" href="a_propos.html" style="position: absolute; top: center; left:60%">A propos</a> 
-        <a id="heure" style="position: absolute; top: 30%; left: 80%;"></a>
+        <a id="heure" style="position: absolute; top: 30%; left: 95%;"></a>
+        <a id="date" style="position: absolute; top: 30%; left: 85%;"></a>
 
     </navbar> 
 
@@ -22,8 +25,7 @@
     <div id="titre" style="height: 80px; width:330px;"><h1><em>2laviande</em></h1></div>
     <br>
 
-    <p>2Laviande est une société dans le but de fournir tout le monde en viande.
-        Notre phrase préférée est "J'ai faim! Je veux de la viande!"</p>
+    <p id="slogan"></p>
         <br>
     <div class="video"> <!--incruste une vidéo sur la page -->  
         <iframe width="80%" height="680px" src="https://www.youtube.com/embed/RMt4Hbz3Fa8?si=v7xjZj4yM9WNHp7o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -44,14 +46,23 @@
         <a href="index.html" class="subscribe-btn">S'abonner</a> <!--créer un bouton-->
     </div>
 
-    
+
+
     
     
         
 
 
     <footer class="footer"> <!--bas de page-->
+        
         <div class="footer-content">
+            <div id="clock" class="clock">
+                <div id="hours-tens"></div>
+                <div id="hours-units"></div>
+                <div id="colon" class="colon off">:</div>
+                <div id="minutes-tens"></div>
+                <div id="minutes-units"></div>
+            </div>    
             <img src="images/logo.png" width="150px" height="auto" alt="logo">
             <ul class="footer-links" > <!-- fait une liste des liens-->
                 <li><a href="https://www.instagram.com/"><img src="images/insta.png" width="80px" height="auto" alt="instagram"></a></li>
