@@ -177,66 +177,9 @@ p{
     100% { transform: rotate(360deg); }
 }
 
-
-.footer.clock{
-
-}
-
-
-.segment0 { left: 10px; top: 2.5px; width: 30px; height: 0px; }
-.segment1 { left: 2.5px; top: 10px; width: 0px; height: 30px; }
-.segment2 { left: 42.5px; top: 10px; width: 0px; height: 30px; }
-.segment3 { left: 10px; top: 42.5px; width: 30px; height: 0px; }
-.segment4 { left: 2.5px; top: 550px; width: 0px; height: 30px; }
-.segment5 { left: 42.5px; top: 55px; width: 0px; height: 30px; }
-.segment6 { left: 10px; top: 92.5px; width: 30px; height: 0px; }
-
-.led {
-    position: absolute;
-    border-radius: 10px 10px 10px 10px;
-    height : 10px;
-    width : 10px;
-    background: #2df;
+#chrono{
+    color:rgb(255, 255, 255);
+    width:100%;
+    left:0%;
 
 }
-
-.segment {
-    position: absolute;
-    border-radius: 10px;
-    border: 8px solid #2df;
-    transition: all 0.2s linear;
-}
-
-.shiftedClock{
-    position: absolute;
-    top:300px;
-    left:100px;
-}
-
-.clock > div {
-    list-style: none;
-    display: inline-block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 120px;
-    height: 200px;
-}
-
-
-
-.clock > .colon {
-    font-size: 100px;
-    height: 150px;
-    width: 40px;
-    top: -75px;
-    color: #2df;
-    text-align: center;
-}
-
-.off {
-
-    transition: all 1.2s linear;
-    opacity: 0.2;
-}
-

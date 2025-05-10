@@ -36,54 +36,7 @@ function loader(event){
     }, 2000);
 }
 
-    
-
-
-function addSegments(digitId){
-
-    let cadran = document.getElementById(digitId); // => identifie le bon cadran
-    
-    for(let i=0; i<=6; i++){
-        let balise = document.createElement("div"); // création d'une balise div segment
-        balise.id = `seg${i}`; // => son id
-        balise.className =`segment${i} segment off`;  // => ses classes (off par défaut)     
-        cadran.appendChild(balise); // ajout de la balise en tant qu'enfant du cadran
-    }    
-    
-
-} 
-
-function updateDigit(digitId, value){
-
-    let segmentStataddSegmentes = [
-        [1, 1, 1, 0, 1, 1, 1],
-        [0, 0, 1, 0, 0, 1, 0],
-        [1, 0, 1, 1, 1, 0, 1],
-        [1, 0, 1, 1, 0, 1, 1],
-        [0, 1, 1, 1, 0, 1, 0],
-        [1, 1, 0, 1, 0, 1, 1],
-        [1, 1, 0, 1, 1, 1, 1],
-        [1, 0, 1, 0, 0, 1, 0],
-        [1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 0, 1, 1]
-    ];
-
-    let balise = document.getElementById(digitId); // => identification du bon cadran
-    for(let i=0; i<=6; i++){
-        if(segmentStataddSegmentes[value][i] == 0){
-            balise.children[i].className =`segment${i} segment off`; // => si la valeur du tableau est 0, la balise a la classe off
-        }
-        else{
-            balise.children[i].className =`segment${i} segment`; // => sinon elle ne la plus
-        };
-    };
-}
-
 function display_time_chrono(){
-    addSegments("hours-tens");
-    addSegments("hours-units");
-    addSegments("minutes-tens");
-    addSegments("minutes-units");
     let secondes = 0;
     let minutes = 0;  
     let cadran ="";
@@ -92,15 +45,11 @@ function display_time_chrono(){
         minutes = Math.floor(secondes / 60);
         secondes = secondes % 60;
         if (minutes >= 60) {
-            minutes = 0;
+            secondes = 0;
             console.log("waouh! Cela fait 1 heure que vous êtes sur le site !!")
         }     
-        cadran = String(minutes) +" : "+ String(secondes);
-        document.getElementById("cadran").innerText = cadran
-        updateDigit("hours-tens", cadran[0]); // affichage du temps en fonction de chaques cadrans
-        updateDigit("hours-units", cadran[1]);
-        updateDigit("minutes-tens", cadran[3]);
-        updateDigit("minutes-units", cadran[4]);
+        cadran = "Temps passé sur le site : " + String(minutes) + "min "+ String(secondes) + "s";
+        document.getElementById("chrono").innerText = cadran
     },1000);   
 }
 
