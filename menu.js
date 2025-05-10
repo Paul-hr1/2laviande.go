@@ -59,18 +59,11 @@ function updateDigit(digitId, value){
     };
 }
 
-
-
-
-function init_chrono(){
-
+function display_time_chrono(){
     addSegments("hours-tens");
     addSegments("hours-units");
     addSegments("minutes-tens");
     addSegments("minutes-units");
-}
-
-function display_time_chrono(){
     let secondes = 0;
     let minutes = 0;  
     let cadran ="";
@@ -94,7 +87,6 @@ function display_time_chrono(){
 
 function main(){
     setInterval(displayDateTime,1000); 
-    init_chrono(); 
     display_time_chrono();
 }
 
