@@ -9,14 +9,34 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
     console.log(heure);
 } 
 
-function delay(){
-    let produit = document.getElementById("produits");
-    
-}
-function loader(){
-    let event = null;
-} 
 
+
+
+function delay(){
+    const produit = document.getElementById("produits"); //récupérer les id des boutons de la navbar
+    let equipe = document.getElementById("equipe");
+    let a_propos = document.getElementById("a_propos");
+    let logo = document.getElementById("logo");
+    //activer la fonction loader on cliquant sur les boutons de la navbar
+    produit.addEventListener("click", loader);         
+    equipe.addEventListener("click", loader);
+    a_propos.addEventListener("click", loader);
+    logo.addEventListener("click", loader);
+}
+
+function loader(event){
+    event.preventDefault();
+
+    let load = document.getElementById("loader");
+    load.style.display = 'block';
+
+    setTimeout(() => {   //cacher le loader après 2s
+        //load.style.display = 'none';
+       window.location.assign(event.target.href);   
+    }, 2000);
+}
+
+    
 
 
 function addSegments(digitId){
@@ -88,6 +108,9 @@ function display_time_chrono(){
 function main(){
     setInterval(displayDateTime,1000); 
     display_time_chrono();
+    delay();
+    
+    
 }
 
 main();
