@@ -177,9 +177,9 @@ p{
     100% { transform: rotate(360deg); }
 }
 
+
 #chrono{
     color:rgb(255, 255, 255);
-    width:100%;
-    left:0%;
-
+    margin-left: -40%;
+    padding-bottom: -40px;
 }

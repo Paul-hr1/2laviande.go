@@ -42,10 +42,12 @@ function display_time_chrono(){
     let cadran ="";
     setInterval(function() {
         secondes++;
-        minutes = Math.floor(secondes / 60);
-        secondes = secondes % 60;
-        if (minutes >= 60) {
+        if(secondes >= 60){
+            minutes++;
             secondes = 0;
+        }
+        if (minutes >= 60) {
+            minutes = 0;
             console.log("waouh! Cela fait 1 heure que vous êtes sur le site !!")
         }     
         cadran = "Temps passé sur le site : " + String(minutes) + "min "+ String(secondes) + "s";
