@@ -1,0 +1,71 @@
+
+
+ul, li{
+    list-style: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url(images/fond-de-bois-peint-blanc.webp);
+    background-size:cover;
+}
+
+.img1{
+    position: absolute; /* Permet de superposer les images */
+    top: 450px;
+    left: 100px;   
+}
+
+.img2{
+    position:absolute;
+    top:500px;
+    right:200px;
+}
+.infos{
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    .cotelette h1{
+        justify-content: center;      
+        display: flex;  
+    }
+    .cotelette h2{
+        text-shadow: 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
+        color: #fff; /* texte blanc */
+    }
+}
+
+
+#avis{
+    margin: 60px;
+    img{
+        border-radius: 100%;
+    }
+    img:hover{
+        border-radius: 0;
+        size-adjust: 20px;
+    }
+    .score{
+        display:flex;
+        align-items: flex;
+        font-size:150%;
+        
+        
+        h1{
+            margin-top: 10px;
+            margin-left:50px;
+            color:rgb(140, 81, 4);
+        }
+        :hover{
+            background: linear-gradient(135deg, rgb(192, 111, 35),rgb(223, 179, 6)); /*dégradé de couleur en fond */
+            color:rgb(28, 25, 50);
+        }
+    }
+   
+}
+
+#acheter{
+    margin-left: 80px;
+    margin-bottom: 100px;
+}

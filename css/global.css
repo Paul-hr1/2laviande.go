@@ -1,16 +1,10 @@
-
-body{
-    background-image: url(images/fond-de-bois-peint-blanc.webp);
-    background-size: cover;
-}
-    
 navbar {
     width: 100%;
     margin: 0; /*marge tout autour de la navbar*/
     padding: 0; /* écart à l'intérieur de la navbar*/
     position: fixed; /* la navbar reste en haut quand on défile*/
     top: 0;     
-    a:not(#logo){ /* comprend les liens sauf le logo*/
+    a:not(#logo ,#heure, #date){ /* comprend les liens sauf le logo, lhuere te la date*/
         /* création de boites*/
         background-color:  rgb(140, 81, 4);
         width: 100px; 
@@ -26,68 +20,15 @@ navbar {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;  /*police*/ 
         transition: all 0.3s ease;     
     }
-    a:not(#logo):hover{
+    a:not(#logo, #heure, #date):hover{  /*enleve l'animation de survol de la souris*/
         transform: scale(1.2);
-        background-color: #aa0303;
-        
+        background-color: #aa0303;   
     }
-}    
-
-h1{
-    text-align: center;
-    color: crimson;
-}
-
-#buffet{
-    max-width: 100%;
-}
-
-#menu {
-    display: flex;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: #fff;
-}
-.viande{
-    width: 25%;
-    padding: 2%;
-    margin: 5px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
-    border-radius: 20%;  
-    a{
-        text-decoration: none;
-        color: black;
+    #heure, #date{
+        font-style:italic ;
     }
-    h2{
-        font-family: Impact;
-    }
-    transition: all 0.3s ease; /* Ajoute une transition fluide */
-    
-}
-.viande:hover{ 
-    background-color:#333; /* Change la couleur de fond en gris */
-    transform: scale(1.2);  /* Augmente la taille */
-    color: white;
-}
+} 
 
-ul, li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-
-body {
-    padding: 0;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-.content {
-    padding: 20px;
-}
 
 .footer {
     background-color: #333; /* Couleur de fond */
@@ -100,31 +41,27 @@ body {
     width: 100%;
 }
 
-.footer-content {
-    
+.footer-content { 
     max-width: 700px; /* Largeur maximale */
     margin: 0 auto; /* Centrer le contenu */   
 }
-
 
 .footer-links {
     background-color: white;
     border-radius: 100%;
     display: flex;
     justify-content: center; /* Centrer les liens */
-    gap: 15px; /* Espacement entre les liens */
-    
+    gap: 15px; /* Espacement entre les liens */   
 }
+
 .footer-links img:hover{
     transition: all 0.3s ease;
     transform: scale(1.2);
 }
 
 .footer-links a {
-    
     text-decoration: none;
-    color:#333;
-    
+    color:#333;  
 }
 
 #loader {
@@ -144,4 +81,10 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+#chrono_logo {
+    display: flex;
+    gap: 25%;
+    padding-bottom: 5px;
 }

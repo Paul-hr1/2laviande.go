@@ -1,4 +1,4 @@
-let slogan = "2Laviande est une société dans le but de fournir tout le monde en viande. Notre phrase préférée est: ' J'ai faim! Je veux de la viande! '";
+let slogan = "2Laviande est une société dans le but de fournir tout le monde en viande. Notre phrase préférée est: ' J'ai faim! Je veux 2laviande! '";
 let cut = slogan.split(" ");
 let text = document.getElementById("slogan");
 let index = 0;

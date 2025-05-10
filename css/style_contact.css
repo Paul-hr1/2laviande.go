@@ -1,0 +1,44 @@
+/* Reset de base */
+body {
+    background-image: url(images/fond-de-bois-peint-blanc.webp);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    
+}
+ ul, li{
+    list-style: none;   
+}
+
+
+
+    
+
+#titre{
+    margin-top:100px;
+    text-align: center;
+    color: brown ;
+}
+
+.questionnaire{
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left:60px;
+    padding:50px;
+    margin-bottom:150px; 
+    border: 15px solid black ;
+    border-radius: 30%;
+    color:wheat;
+    
+}
+#block{
+    display: flex;
+    justify-content: center;
+    gap : 500px;
+    align-items: flex-start;
+    
+}
+.communications{
+    margin:100px;
+   
+}

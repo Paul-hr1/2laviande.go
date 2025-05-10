@@ -3,20 +3,21 @@
     <head>
         <meta charset="utf-8">
         <title>Contacts</title>
-        <link href="style/style_contact.css" rel="stylesheet">
-        <script src="menu.js" defer></script>
+        <link href="../css/style_contact.css" rel="stylesheet">
+        <link href="../css/global.css" rel="stylesheet">
+        <script src="../js/global.js" defer></script>
+        <csript src="../js/contact.js" defer></csript>
 
     </head>
     <body>
         <navbar style="height: 70px;  background-color: grey;"> <!-- barre de navigation-->
-            <a id="logo" href="index.html"><img src="images/logo.png" alt="logo" height="70"></a>
-            <a id="produits" href="produits.html" style="position: absolute; top:center; left:20%">Produits</a> <!--lien qui renvoie vers une autre page-->
-            <a id="equipe" href="equipe.html" style="position: absolute; top: center; left:40%">L'Équipe</a>   
-            <a id="a_propos" href="a_propos.html" style="position: absolute; top: center; left:60%">A propos</a> 
+            <a id="logo" href="index.html"><img src="../images/logo.png" alt="logo" height="70"></a>
+            <a id="produits" href="produits.html" style="position: absolute; top:center; left:25%">Produits</a> <!--lien qui renvoie vers une autre page-->
+            <a id="equipe" href="#" onclick="confirmer('equipe.html')"  style="position: absolute; top: center; left:45%">L'Équipe</a>   
+            <a id="a_propos" href="a_propos.html" style="position: absolute; top: center; left:65%">A propos</a> 
             <a id="heure" style="position: absolute; top: 30%; left: 95%;"></a>
             <a id="date" style="position: absolute; top: 30%; left: 85%;"></a>
-
-        </navbar> 
+        </navbar>     
         <br>
        
         
@@ -64,29 +65,27 @@
 
     <span id="communication">
             <ul class="applis">
-                <li><a href="https://www.gmail.com/"><img src="images/gmail.png" width="60px" height="auto" alt="gmail">  </a></li>
-                <li><a href="https://garticphone.com/fr"><img src="images/telephone.png" width="65px" height="auto" alt="telephone">  </a></li>
-                <li><a href="https://www.instagram.com/"><img src="images/insta.png" width="80px" height="auto" alt="instagram">  </a></li>
-                <li><a href="https://www.facebook.com/"><img src="images/facebook.png" width="80px" height="auto" alt="facebook"></a></li>
+                <li><a href="https://www.gmail.com/"><img src="../images/gmail.png" width="60px" height="auto" alt="gmail">  </a></li>
+                <li><a href="https://garticphone.com/fr"><img src="../images/telephone.png" width="65px" height="auto" alt="telephone">  </a></li>
+                <li><a href="https://www.instagram.com/"><img src="../images/insta.png" width="80px" height="auto" alt="instagram">  </a></li>
+                <li><a href="https://www.facebook.com/"><img src="../images/facebook.png" width="80px" height="auto" alt="facebook"></a></li>
     </span>
 </div>
     
     <hr width="100%">
 
-    <footer class="footer">
-        <div class="footer-content">
-            <a href="index.html"><img src="images/logo.png" width="150px" height="auto" alt="logo"></a>
-            <ul class="footer-links" >
-                <li><a href="https://www.instagram.com/"><img src="images/insta.png" width="80px" height="auto" alt="instagram"></a></li>
-                <li><a href="https://www.whatsapp.com/"><img src="images/whatsapp.png" width="80px" height="auto" alt="whatsapp"></a></li>
-                <li><a href="https://www.X.com/"><img src="images/X.png" width="80px" height="auto" alt="X"></a></li>
-                <li><a href="https://www.facebook.com/"><img src="images/facebook.png" width="80px" height="auto" alt="facebook"></a></li>
-            </ul>
+    <footer class="footer"> <!--bas de page--> 
+        <div id="chrono_logo">
+            <p id="chrono" style="margin-top: 50px; margin-left: 5%;"></p>
+            <a href="index.html"><img src="../images/logo.png" width="150px" height="auto" alt="logo"></a>
         </div>
+        <ul class="footer-links" > <!-- fait une liste des liens-->
+            <li><a href="https://www.instagram.com/"><img src="../images/insta.png" width="80px" height="auto" alt="instagram"></a></li>
+            <li><a href="https://www.whatsapp.com/"><img src="../images/whatsapp.png" width="80px" height="auto" alt="whatsapp"></a></li>
+            <li><a href="https://www.X.com/"><img src="../images/X.png" width="80px" height="auto" alt="X"></a></li>
+            <li><a href="https://www.facebook.com/"><img src="../images/facebook.png" width="80px" height="auto" alt="facebook"></a></li>
+            <ul><li><a href="contact.html"><h2>Contacts</h2></a></li></ul>
+        </ul>
     </footer>
-    
-
-
-</ol>
 </body>
 </html>

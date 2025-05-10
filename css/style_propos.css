@@ -1,0 +1,54 @@
+ 
+
+
+h1{
+    text-align: center;
+    color: crimson;
+    margin-top: 100px;
+}
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h4{
+    background-image:url(../images/fond-teck-texture-bois-naturelle-exclusive-motifs-photo-tres-haute-resolution.png);
+    color:white;
+    padding:50px;
+}
+
+table{
+
+    border-collapse: separate; /* Nécessaire pour que border-spacing fonctionne */
+    border-spacing: 50px; /* Espace entre les cellules (colonnes et lignes) */
+}
+#arrow{
+    top:500px;
+    margin-left:auto;
+    width:30px;
+    height:2000px;
+    background-color: brown;
+
+
+}
+
+table h4, table img{
+        animation-name:shade;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        
+}
+
+@keyframes shade{
+    0% {opacity: 0;}
+    50%{opacity: 50;}
+    100% {opacity: 100;}
+}
+
