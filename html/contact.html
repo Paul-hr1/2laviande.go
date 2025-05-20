@@ -26,18 +26,20 @@
         </div>
     <flex>  
 <div id="block">          
-<span name="questionnaire" id="questionnaire" style="height:440px; width:700px; background-image:url(images/fond-teck-texture-bois-naturelle-exclusive-motifs-photo-tres-haute-resolution.png );">       
+<span name="questionnaire" id="questionnaire" style="height:500px ; width:700px; background-image:url(images/fond-teck-texture-bois-naturelle-exclusive-motifs-photo-tres-haute-resolution.png );">       
 <ol>
     <h1 id="message"><li>Nous envoyez un message</li></h1>
     <br>
     <form action="contact.html" method="get">
-    Prénom :<input type="text" name="prenom">             
-    Nom : <input type="text" name="nom">
+    Prénom :<input type="text" name="prenom" placeholder="nom">             
+    Nom : <input type="text" name="nom" placeholder="prenom"> 
+    <br><br>
+    Donnes ton mail : <input type="email" name="mail" placeholder="moi@quelquechose.com">
       
     <br><br>
-    Domicile <input type="radio" name="Hexagone">Hexagone
-             <input type="radio" name="Outre-mer">Outre-mer
-             <input type="radio" name="Étranger">Étranger
+    Domicile <input type="radio" name="choix" required>Hexagone
+             <input type="radio" name="choix" >Outre-mer
+             <input type="radio" name="choix" >Étranger
 
     <br><br>
     Viande favorite :<select name="viande favorite" id="viande favorite"> 
@@ -56,7 +58,7 @@
         <option value="Mollets d'humain">Mollets d'humain</option>
         </select>
     <p>Message :</p>
-    <textarea name="comments" cols="80" rows="5"></textarea>
+    <textarea name="comments" cols="80" rows="5" placeholder="Hum 2 la viande, une vraie dinguerie"></textarea>
     <br>
     <input type="submit" name="Valider" value="Valider">
     </ol>
