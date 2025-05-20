@@ -1,7 +1,7 @@
 const canvas = document.getElementById("grattage");
     const ctx = canvas.getContext("2d"); // contexte
     const image = new Image();
-    image.src = "../images/ph.png"; // image à révéler
+    image.src = "../images/ph.jpg"; // image à révéler
 
     image.onload = () => {
       // Dessiner l'image à révéler
@@ -16,14 +16,14 @@ const canvas = document.getElementById("grattage");
       ctx.globalCompositeOperation = "destination-out";  // les traits de la souris agissent comme une gomme, en effaçant des parties.
     };
 
-    let isDrawing = False; // verrou (faut'il dessiner ou non?)
+    let isDrawing = false; // verrou (faut'il dessiner ou non?)
 
     function draw(event) {  // event contient toutes les infos utiles concernant les inputs
       if (!isDrawing) return; 
 
       const rect = canvas.getBoundingClientRect(); // renvoie le rectangle du canvas (donc de l'image)
-      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left; // position x de la souris
-      const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top; // position y de la souris
+      const x = (event.touches ? event.touches[0].clientX : event.clientX) - rect.left; // position x de la souris
+      const y = (event.touches ? event.touches[0].clientY : event.clientY) - rect.top; // position y de la souris
 
       ctx.beginPath();
       ctx.arc(x, y, 20, 0, Math.PI * 2); // former un rond autour de la souris
