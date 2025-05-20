@@ -1,7 +1,7 @@
 const canvas = document.getElementById("grattage");
     const ctx = canvas.getContext("2d"); // contexte
     const image = new Image();
-    image.src = "https://via.placeholder.com/400x300.png?text=Bravo%21"; // image à révéler
+    image.src = "http://127.0.0.1:5500/html/index.html"; // image à révéler
 
     image.onload = () => {
       // Dessiner l'image à révéler
