@@ -5,8 +5,6 @@ function displayDateTime(){ // fonction pour affiche la date et l'heure
     let heure = event.toLocaleTimeString('fr-FR');
     document.getElementById("date").innerText= date; // affiche du texte dans le html à id=date
     document.getElementById("heure").innerText = heure;
-
-    console.log(heure);
 } 
 
 
