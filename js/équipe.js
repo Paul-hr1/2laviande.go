@@ -1,7 +1,7 @@
 const canvas = document.getElementById("grattage");
     const ctx = canvas.getContext("2d"); // contexte
     const image = new Image();
-    image.src = "../images/ph.jpg"; // image à révéler
+    image.src = "../images/ph.png"; // image à révéler
 
     image.onload = () => {
       // Dessiner l'image à révéler
@@ -9,7 +9,7 @@ const canvas = document.getElementById("grattage");
 
       // Ajouter une couche grise par-dessus
       ctx.globalCompositeOperation = "source-over"; // dessine par dessus de l'image déja existante
-      ctx.fillStyle = "gray";
+      ctx.fillStyle = "black";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Mode grattage
