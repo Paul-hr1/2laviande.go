@@ -26,23 +26,24 @@
         </div>
     <flex>  
 <div id="block">          
-<span name="questionnaire" id="questionnaire" style="height:500px" ; width="700px">       
+<span name="questionnaire" id="questionnaire" style="height:525px" ; width="700px">       
 <ol>
     <h1 id="message"><li>Nous envoyez un message</li></h1>
     <br>
     <form action="contact.html" id="Form" method="get">
-    Prénom :<input type="text" name="prenom" placeholder="prenom" >   
-    <div id="erreurPrenom">Veuillez choisir une option.</div>
+    Prénom :<input type="text" name="prenom" id="prenom" placeholder="prenom">   
+    <div id="erreurPrenom">Veuillez entrer votre prénom</div>
 
-    Nom : <input type="text" name="nom" placeholder="nom" required> 
-    <br><br>
-    Donne ton mail : <input type="email" name="mail" placeholder="moi@quelquechose.com" required>
-      
-    <br><br>
+    Nom : <input type="text" name="nom" id="nom" placeholder="nom"> 
+    <div id="erreurNom">Veuillez entrer votre nom</div>
+
+    Donne ton mail : <input type="email" name="mail" placeholder="moi@quelquechose.com" id="mail">  
+    <div id="erreurMail">Veuillez entrer votre mail</div>
+
     Domicile <input type="radio" name="choix" value="Hexagone"  >Hexagone
              <input type="radio" name="choix" value="Outre-mer">Outre-mer
              <input type="radio" name="choix" value="Étranger">Étranger
-             <div id="erreurChoix">Veuillez choisir une option.</div>
+             <div id="erreurChoix">Veuillez choisir une option</div>
 
     
     Viande favorite :<select name="viande favorite" id="viande favorite"> 
@@ -59,11 +60,13 @@
         <option value="Pangolin">Pangolin</option>
         <option value="Chienté">Chienté</option>
         <option value="Mollets d'humain">Mollets d'humain</option>
+        <option value="Cuisse de Noam">Cuisse de Noam</option>
         </select>
     <p>Message :</p>
-    <textarea name="comments" cols="80" rows="5" placeholder="Hum 2 la viande, une vraie dinguerie"></textarea>
+    <textarea name="comments" cols="80" rows="5" id="commentaire" placeholder="Hum 2 la viande, une vraie dinguerie"></textarea>
+    <div id="erreurComment">Veuillez écrire au moins 20 caractères</div>
     <br>
-    <input type="submit" name="Valider" value="Valider">
+    <input type="submit" id="submit" name="Valider" value="Valider" disabled>
     </ol>
     </form>
 </span>

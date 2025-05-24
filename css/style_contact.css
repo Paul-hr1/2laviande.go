@@ -46,8 +46,8 @@ body {
    
 }
 
-#erreurChoix, erreurPrenom{
+#erreurChoix, #erreurPrenom, #erreurNom, #erreurMail, #erreurComment{
     color:red;
-    visibility: hidden;
+    /* visibility: hidden; */
     height: 1em;
 }

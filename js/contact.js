@@ -1,35 +1,80 @@
-// A FINIR
-
-function validationChoix() {
+function configurerValidationFormulaire() {
     const form = document.getElementById('Form');
-    const erreur = document.getElementById('erreurChoix');
+    const prenom = document.getElementById('prenom');
+    const nom = document.getElementById('nom');
+    const mail = document.getElementById('mail');
+    const commentaire = document.getElementById('commentaire');
     const erreurPrenom = document.getElementById('erreurPrenom');
-    const choix = form.elements['choix'];
-    const prenom = form.elements['prenom'];
+    const erreurChoix = document.getElementById('erreurChoix');
+    const erreurNom = document.getElementById('erreurNom');
+    const erreurMail = document.getElementById('erreurMail');
+    const erreurComment = document.getElementById('erreurComment');
+    
+    form.addEventListener('input', function (event) {
+        let formulaireValide = true;
 
-
-    form.addEventListener('submit', function(e) {
-        if(prenom.value == "")
-        
-        
-        let checked = false;
-        for(let i = 0; i < choix.length; i++) {
-            if (choix[i].checked) checked = true;
+        // Vérification du prénom
+        if (prenom.value == "") {
+            erreurPrenom.style.visibility = 'visible';
+            formulaireValide = false;
+        } 
+        else {
+            erreurPrenom.style.visibility = 'hidden';
         }
-        if (!checked) {
-            e.preventDefault();
-            erreur.style.visibility = 'visible';
-        } else {
-            erreur.style.visibility = 'hidden';
+
+        // vérification du nom
+        if(nom.value == ""){
+            erreurNom.style.visibility = 'visible';
+            formulaireValide = false;
         }
-    });
+        else{
+            erreurNom.style.visibility = 'hidden';
+        }
+
+        // vérification du mail
+        if(mail.value == ""){
+            erreurMail.style.visibility = 'visible';
+            formulaireValide = false;
+        }
+    else{
+        erreurMail.style.visibility = 'hidden';
+    }
+
+    // vérification du commentaire
+    if(commentaire.value.length < 20){
+        erreurComment.style.visibility = 'visible';
+        formulaireValide = false;
+    }
+    else{
+        erreurComment.style.visibility = 'hidden';
+    }
+
+    // Vérification du choix
+    const choix = document.querySelectorAll('input[name="choix"]');
+    let choixValide = false;
+    choix.forEach(function (radio) {
+        if (radio.checked) {
+            choixValide = true;
+        }
+        });
+
+    if (choixValide == false) {
+        erreurChoix.style.visibility = 'visible';
+        formulaireValide = false;
+    } else {
+        erreurChoix.style.visibility = 'hidden';
+    }
+
+    if (formulaireValide == false) {
+        event.preventDefault();
+        document.getElementById('submit').disabled = true;
+    }
+    else{
+        document.getElementById('submit').disabled = false;
+    }
+    
+  });
 }
 
-function validationPrenom(){
-
-}
-
-function main(){
-    document.addEventListener('DOMContentLoaded', validationChoix);
-}
-main();    
+document.addEventListener('DOMContentLoaded', configurerValidationFormulaire);
+    
