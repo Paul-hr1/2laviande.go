@@ -1,6 +1,6 @@
 /* Reset de base */
 body {
-    background-image: url(/images/fond-de-bois-peint-blanc.webp);
+    /* background-image: url(/images/fond-teck-texture-bois-naturelle-exclusive-motifs-photo-tres-haute-resolution.png);  */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -23,6 +23,9 @@ body {
 
 .questionnaire{
     box-shadow:0 2px 5px rgba(0, 0, 0, 0.1);
+    /* height: 500px; */
+    /* width: 700px; */
+    background-image:url(images/fond-teck-texture-bois-naturelle-exclusive-motifs-photo-tres-haute-resolution.png);  
     margin-left:60px;
     padding:50px;
     margin-bottom:150px; 
