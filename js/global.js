@@ -15,24 +15,58 @@ function delay(){
     let equipe = document.getElementById("equipe");
     let a_propos = document.getElementById("a_propos");
     let logo = document.getElementById("logo");
-    //activer la fonction loader on cliquant sur les boutons de la navbar
-    produit.addEventListener("click", loader);         
-    equipe.addEventListener("click", loader);
-    a_propos.addEventListener("click", loader);
-    logo.addEventListener("click", loader);
+    
+    [produit, equipe, a_propos, logo].forEach(element => {
+        if (element) {
+            element.addEventListener("click", handleNavigation);
+        }
+    });
+}
+function confirmer(page){
+    if (confirm("Voulez-vous vraiment naviguer vers la présentation de l'équipe ?")) {
+        window.location.href = page;
+      }
 }
 
-function loader(event){
-    event.preventDefault();
+function handleNavigation(event, shouldConfirm = false, confirmMessage = "") {
+        const link = event.target.closest("a");
+        if (!link) return;
 
-    let load = document.getElementById("loader");
-    load.style.display = 'block';
+        const href = link.getAttribute("href");
 
-    setTimeout(() => {   //cacher le loader après 2s
-        //load.style.display = 'none';
-       window.location.assign(event.target.href);   
-    }, 2000);
+        // Skip external links, mailto:, etc.
+        if (!href || href.startsWith("http") || href.startsWith("mailto:")) {
+            return; // Let default behavior happen
+        }
+
+        event.preventDefault();
+
+        // Optional confirmation dialog
+        if (shouldConfirm && !confirm(confirmMessage)) {
+            return; // Cancel navigation
+        }
+
+        const loader = document.getElementById("loader");
+        if (loader) loader.style.display = "block";
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 2000);
+    
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const equipeLink = document.getElementById("equipe");
+
+        if (equipeLink) {
+            equipeLink.addEventListener("click", function (event) {
+                handleNavigation(event, true, "Voulez-vous vraiment naviguer vers la présentation de l'équipe ?");
+            });
+        }
+
+       
+    });
 }
+
 
 function display_time_chrono(){
     let secondes = 0;
@@ -55,9 +89,10 @@ function display_time_chrono(){
 
 
 function main(){
+    delay();
     setInterval(displayDateTime,1000); 
     display_time_chrono();
-    delay();
+    
     
     
 }
