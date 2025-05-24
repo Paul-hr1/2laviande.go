@@ -6,7 +6,7 @@
         <link href="../css/style_contact.css" rel="stylesheet">
         <link href="../css/global.css" rel="stylesheet">
         <script src="../js/global.js" defer></script>
-        <csript src="../js/contact.js" defer></csript>
+        <script src="../js/contact.js" defer></script>
 
     </head>
     <body>
@@ -30,18 +30,21 @@
 <ol>
     <h1 id="message"><li>Nous envoyez un message</li></h1>
     <br>
-    <form action="contact.html" method="get">
-    Prénom :<input type="text" name="prenom" placeholder="nom">             
-    Nom : <input type="text" name="nom" placeholder="prenom"> 
+    <form action="contact.html" id="Form" method="get">
+    Prénom :<input type="text" name="prenom" placeholder="prenom" >   
+    <div id="erreurPrenom">Veuillez choisir une option.</div>
+
+    Nom : <input type="text" name="nom" placeholder="nom" required> 
     <br><br>
-    Donne ton mail : <input type="email" name="mail" placeholder="moi@quelquechose.com">
+    Donne ton mail : <input type="email" name="mail" placeholder="moi@quelquechose.com" required>
       
     <br><br>
-    Domicile <input type="radio" name="choix" required>Hexagone
-             <input type="radio" name="choix" >Outre-mer
-             <input type="radio" name="choix" >Étranger
+    Domicile <input type="radio" name="choix" value="Hexagone"  >Hexagone
+             <input type="radio" name="choix" value="Outre-mer">Outre-mer
+             <input type="radio" name="choix" value="Étranger">Étranger
+             <div id="erreurChoix">Veuillez choisir une option.</div>
 
-    <br><br>
+    
     Viande favorite :<select name="viande favorite" id="viande favorite"> 
         <option value="Gigot d'agneau">Gigot d'agneau</option>
         <option value="Biftek">Biftek</option>
