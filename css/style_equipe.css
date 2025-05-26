@@ -38,3 +38,25 @@ canvas {
         border: 2px solid #333;
         cursor: crosshair;
 }
+
+.superposage {
+  position: relative;
+  display: inline-block;
+}
+
+.superposage img {
+  display: block;
+  width: 400px;
+  height: auto;
+  z-index: 1; /* en dessous du grattage*/
+  position: relative;
+}
+
+.superposage canvas {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 400px;
+  height: 100%;
+  z-index: 2; /* au dessu de l'image*/
+}

@@ -3,7 +3,8 @@ navbar {
     margin: 0; /*marge tout autour de la navbar*/
     padding: 0; /* écart à l'intérieur de la navbar*/
     position: fixed; /* la navbar reste en haut quand on défile*/
-    top: 0;     
+    top: 0; 
+    z-index: 5; /* la navbar est au dessus de tout*/    
     a:not(#logo ,#heure, #date){ /* comprend les liens sauf le logo, lhuere te la date*/
         /* création de boites*/
         background-color:  rgb(140, 81, 4);
