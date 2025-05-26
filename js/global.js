@@ -92,9 +92,9 @@ function main(){
     delay();
     setInterval(displayDateTime,1000); 
     display_time_chrono();
-    
-    
-    
 }
 
+document.addEventListener('copy',function(){
+    console.log("Faire du plagiat c'est perdre de l'aura");
+});
 main();

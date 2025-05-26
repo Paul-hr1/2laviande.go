@@ -77,4 +77,3 @@ function configurerValidationFormulaire() {
 }
 
 document.addEventListener('DOMContentLoaded', configurerValidationFormulaire);
-    
