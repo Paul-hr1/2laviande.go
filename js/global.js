@@ -15,24 +15,65 @@ function delay(){
     let equipe = document.getElementById("equipe");
     let a_propos = document.getElementById("a_propos");
     let logo = document.getElementById("logo");
-    //activer la fonction loader on cliquant sur les boutons de la navbar
-    produit.addEventListener("click", loader);         
-    equipe.addEventListener("click", loader);
-    a_propos.addEventListener("click", loader);
-    logo.addEventListener("click", loader);
+    
+    [produit, equipe, a_propos, logo].forEach(element => {
+        if (element) {
+            element.addEventListener("click", handleNavigation);
+        }
+    });
+}
+function confirmer(page){
+    if (confirm("Voulez-vous vraiment naviguer vers la présentation de l'équipe ?")) {
+        window.location.href = page;
+      }
 }
 
-function loader(event){
-    event.preventDefault();
+function handleNavigation(event, shouldConfirm = false, confirmMessage = "") {
+        const link = event.target.closest("a");
+        const viandeSection = event.target.closest("section.viande");
 
-    let load = document.getElementById("loader");
-    load.style.display = 'block';
+    // If not an <a> and not inside .viande, exit
+    if (!link && !viandeSection) return;
 
-    setTimeout(() => {   //cacher le loader après 2s
-        //load.style.display = 'none';
-       window.location.assign(event.target.href);   
-    }, 2000);
+    // If we're in .viande but didn't click the link directly, find the <a> inside it
+    const targetLink = link || viandeSection.querySelector("a");
+
+    const href = targetLink.getAttribute("href");
+
+    // Skip external links, mailto:, etc.
+    if (!href || href.startsWith("http") || href.startsWith("mailto:")) {
+        return; // Let default behavior happen
+    }
+
+        // Prevent default link behavior
+        event.preventDefault();
+
+        // Optional confirmation dialog
+        if (shouldConfirm && !confirm(confirmMessage)) {
+            return; // Cancel navigation
+        }
+
+        const loader = document.getElementById("loader");
+        if (loader) loader.style.display = "block";
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 2000);
+    
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const equipeLink = document.getElementById("equipe");
+
+        if (equipeLink) {
+            equipeLink.addEventListener("click", function (event) {
+                handleNavigation(event, true, "Voulez-vous vraiment naviguer vers la présentation de l'équipe ?");
+            });
+        }
+
+       
+    });
 }
+
 
 function display_time_chrono(){
     let secondes = 0;
@@ -53,13 +94,32 @@ function display_time_chrono(){
     },1000);   
 }
 
+function ring(){
+    const tel = "02 30 13 05 60"; // numéro à appeler
+    const reponse = prompt (`Si vous voulez appeler ce numéro : ${tel}, entrez le de nouveau dans le champ ci-dessous puis validez`); // affiche une fenetre qui demande de remplir le numéro pour appeler
+
+    if(reponse == tel || reponse == "02.30.13.05.60" || reponse == "0230130560"){ // vérifie différentes façons d'écrir le numéro
+        console.log(`Vous appelez ce numéro : ${tel}`); // affiche dans la console la phrase et le numéro appelé
+        const sonnerie = document.getElementById("sonnerie"); // récupérer l'audio avec son id
+        sonnerie.play(); // lance l'audio
+        setTimeout(() => { // mettre la sonnerie en arrêt après 10 secondes
+            sonnerie.pause(); // met l'audio en pause
+            sonnerie.currentTime = 0; // remet l'audio au début 
+        },10000);
+    }
+}
+
+document.addEventListener('copy',function(){ // déclenche un évènement quand on copy du texte sur la page
+    console.log("Faire du plagiat c'est perdre de l'aura"); //affiche le message dans la console
+});
 
 function main(){
+    
     setInterval(displayDateTime,1000); 
     display_time_chrono();
     delay();
+
     
     
 }
-
 main();

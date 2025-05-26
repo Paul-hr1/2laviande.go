@@ -6,6 +6,8 @@
         <link href="../css/style_agneau.css" rel="stylesheet">
         <link href="../css/global.css" rel="stylesheet">
         <script src="../js/global.js" defer></script>
+        <link href="../css/style_produit.css" rel="stylesheet">
+        <script src="../js/produits.js" defer></script>
     </head>
     <body>
         <navbar style="height: 70px;  background-color: grey;"> <!-- barre de navigation-->
@@ -17,7 +19,7 @@
             <a id="date" style="position: absolute; top: 30%; left: 85%;"></a>
     
         </navbar> 
-
+        <div id="loader"></div>
         <div style="width:100%"><img src="../images/pre.jpg" alt="pré" class="bg" width="100%">
         <img src="../images/agneu.png" class="img1">
         <img src="../images/agneua.png" class="img2"> </div>
@@ -25,8 +27,8 @@
         <span class="infos">
         <section class="cotelette">
             <h2>Cotelette d'agneau</h2>
-            <img src="../images/agneau.jpg" width="300px" height="auto" alt="agneau">
-            <h1>100²€/kg</h1>
+            <img id="img2" src="../images/agneau.jpg" onclick="changeImage2()" width="300px" height="auto" alt="agneau">
+            <h1>50€/kg</h1>
         </section>
         <div id="avis">
             <h2><u>L'avis de l'expert</u></h2>
@@ -40,6 +42,7 @@
         
         </section>
         </span> 
+        
         <div id="acheter" >
             <form action="agneau.html" method="get">
             <input type="number" name="quantité">kg
@@ -49,12 +52,19 @@
         </div>
         
 
-
+        <img src="../images/arrow.png" alt="Scroll to top" class="scroll-to-top" onclick="scrollToTop()"/>
        
         <footer class="footer"> <!--bas de page--> 
             <div id="chrono_logo">
                 <p id="chrono" style="margin-top: 50px; margin-left: 5%;"></p>
                 <a href="index.html"><img src="../images/logo.png" width="150px" height="auto" alt="logo"></a>
+                <div style="margin-right: 5%;">
+                <p>Hésite pas à nous appeler au: <br> <span id="numero" onclick="ring()"> 02 30 13 05 60</span></p>
+                <audio id="sonnerie" src="../audio/7eme-compagnie.mp3"></audio>
+                
+                <p>Viens nous voir : <br> 33 QUATER Av. du Champ de Manœuvre, 44470 Carquefou </p>
+                
+            </div>
             </div>
             <ul class="footer-links" > <!-- fait une liste des liens-->
                 <li><a href="https://www.instagram.com/"><img src="../images/insta.png" width="80px" height="auto" alt="instagram"></a></li>

@@ -6,6 +6,7 @@
     <link href="../css/style_produit.css" rel="stylesheet">
     <link href="../css/global.css" rel="stylesheet">
     <script src="../js/global.js" defer></script>
+    <script src="../js/produits.js" defer></script>
 
 </head>
 <body>
@@ -21,31 +22,70 @@
     <div id="loader"></div>
     <div id="buffet" style="min-width: 100%;"><img src="../images/buffet.jpg" alt="buffet à volonté" width="100%"></div>
     <h1><u>Nos produits</u></h1>
+<div id="filterSection">
+<h2>Filtrer les produits :</h2>
+
+    <form id="filterForm">
+        <label>Nom du produit :
+            <input type="text" id="filterName">
+        </label>
+
+        <label>Prix minimum :
+            <input type="number" id="minPrice">
+        </label>
+
+        <label>Prix maximum :
+            <input type="number" id="maxPrice">
+        </label>
+
+        <button type="submit">Filtrer</button>
+    </form>
+</div>
+
+<br>
+<br>
+
+
     <div id="menu">
-        <section class="viande">
+        <section class="viande" id="img1" onclick="changeImage1()">
             <h2>Boeuf de kobe</h2>
-            <p class="photo"><img src="../images/boeuf1.jpg" width="185px" height="auto" alt="Boeuf"></p>
+            <p class="photo"><img  src="../images/boeuf1.jpg"  width="185px" height="auto" alt="Boeuf"></p>
+            <p class="price">450€ / kg</p>
         </section>
-        <section class="viande">
+        <section class="viande">    
             <h2>Cotelette d'agneau</h2>
             <a href="agneau.html">
-            <p class="photo"><img src="../images/agneau.jpg" width="155px" height="auto" alt="agneau"></p>
-        </a></section>
-        <section class="viande">
+            <p class="photo"><img src="../images/agneau.jpg"  width="155px" height="auto" alt="agneau"></p>
+        </a>
+        <p class="price">50€ / kg</p>
+    </section>
+        <section class="viande"  id="img3" onclick="changeImage3()">
             <h2>Porc en broche</h2>
-            <p class="photo"><img src="../images/porc.png" width="165px" height="auto" alt="porc"></p>
+            <p class="photo"><img  src="../images/porc.png"  width="165px" height="auto" alt="porc"></p>
+            <p class="price">30€ / kg</p>
         </section>
-        <section class="viande">
+        <section class="viande" id="img4" onclick="changeImage4()" >
             <h2>Poulet</h2>
-            <p class="photo"><img src="../images/poulet.jpg" width="175px" height="auto" alt="poulet"></p>
+            <p class="photo"><img  src="../images/poulet.jpg"   width="175px" height="auto" alt="poulet"></p>
+            <p class="price">30€ / kg</p>        
         </section>
     </div>
     <hr width="100%">
+<br>
+    <img src="../images/arrow.png" alt="Scroll to top" class="scroll-to-top" onclick="scrollToTop()"/>
+
 
     <footer class="footer"> <!--bas de page--> 
         <div id="chrono_logo">
             <p id="chrono" style="margin-top: 50px; margin-left: 5%;"></p>
             <a href="index.html"><img src="../images/logo.png" width="150px" height="auto" alt="logo"></a>
+            <div style="margin-right: 5%;">
+                <p>Hésite pas à nous appeler au: <br> <span id="numero" onclick="ring()"> 02 30 13 05 60</span></p>
+                <audio id="sonnerie" src="../audio/7eme-compagnie.mp3"></audio>
+                
+                <p>Viens nous voir : <br> 33 QUATER Av. du Champ de Manœuvre, 44470 Carquefou </p>
+                
+            </div>
         </div>
         <ul class="footer-links" > <!-- fait une liste des liens-->
             <li><a href="https://www.instagram.com/"><img src="../images/insta.png" width="80px" height="auto" alt="instagram"></a></li>
@@ -54,6 +94,7 @@
             <li><a href="https://www.facebook.com/"><img src="../images/facebook.png" width="80px" height="auto" alt="facebook"></a></li>
             <ul><li><a href="contact.html"><h2>Contacts</h2></a></li></ul>
         </ul>
+        
     </footer>
 </body>  
 </html>
