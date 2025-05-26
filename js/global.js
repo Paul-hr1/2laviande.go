@@ -89,9 +89,13 @@ function display_time_chrono(){
 
 
 function main(){
-    delay();
+    
     setInterval(displayDateTime,1000); 
     display_time_chrono();
+    delay();
+
+    
+    
 }
 
 document.addEventListener('copy',function(){
