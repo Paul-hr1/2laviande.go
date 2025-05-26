@@ -70,3 +70,34 @@ function changeImage4() {
     img.src = "../images/poulet.jpg";
   }
 }
+
+
+document.getElementById("filterForm").addEventListener("submit", function (e) {
+  e.preventDefault();             // Empêche le comportement par défaut du formulaire
+
+  // Récupération de la valeur entrée dans le champ "Nom du produit"
+  const nameFilter = document.getElementById("filterName").value.toLowerCase();
+  const minPrice = parseFloat(document.getElementById("minPrice").value);
+  const maxPrice = parseFloat(document.getElementById("maxPrice").value);
+
+  // Récupère toutes les sections de produits
+  const products = document.querySelectorAll("#menu section.viande");
+
+  // Parcourt chaque produit pour appliquer le filtre
+  products.forEach(product => {
+      // On récupère le nom du produit (dans le <h2>)
+    const name = product.querySelector("h2").textContent.toLowerCase();
+    const price = parseFloat(product.querySelector(".price").textContent);
+
+     // Vérifie si le nom du produit contient le texte recherché
+    const matchName = name.includes(nameFilter);
+    const matchMin = isNaN(minPrice) || price >= minPrice;  // Vérifie si le prix est supérieur ou égal au prix minimum saisi
+    const matchMax = isNaN(maxPrice) || price <= maxPrice;
+
+    if (matchName && matchMin && matchMax) { // Si le produit respecte les 3 critères, on l'affiche
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";   // Sinon, on le cache
+    }
+  });
+});

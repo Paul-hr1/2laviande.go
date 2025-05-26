@@ -30,15 +30,22 @@ function confirmer(page){
 
 function handleNavigation(event, shouldConfirm = false, confirmMessage = "") {
         const link = event.target.closest("a");
-        if (!link) return;
+        const viandeSection = event.target.closest("section.viande");
 
-        const href = link.getAttribute("href");
+    // If not an <a> and not inside .viande, exit
+    if (!link && !viandeSection) return;
 
-        // Skip external links, mailto:, etc.
-        if (!href || href.startsWith("http") || href.startsWith("mailto:")) {
-            return; // Let default behavior happen
-        }
+    // If we're in .viande but didn't click the link directly, find the <a> inside it
+    const targetLink = link || viandeSection.querySelector("a");
 
+    const href = targetLink.getAttribute("href");
+
+    // Skip external links, mailto:, etc.
+    if (!href || href.startsWith("http") || href.startsWith("mailto:")) {
+        return; // Let default behavior happen
+    }
+
+        // Prevent default link behavior
         event.preventDefault();
 
         // Optional confirmation dialog
