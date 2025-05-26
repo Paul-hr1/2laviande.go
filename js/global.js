@@ -87,6 +87,21 @@ function display_time_chrono(){
     },1000);   
 }
 
+function ring(){
+    const tel = "02 30 13 05 60";
+    const reponse = prompt (`Si vous voulez appeler ce numéro : ${tel}, entrez le de nouveau dans le champ ci-dessous puis validez`);
+
+    if(reponse == tel || reponse == "02.30.13.05.60" || reponse == "0230130560"){
+        console.log(`Vous appelez ce numéro : ${tel}`);
+        const sonnerie = document.getElementById("sonnerie");
+        sonnerie.play();
+        setTimeout(() => {
+            sonnerie.pause();
+            sonnerie.currentTime = 0;
+        },10000);
+    }
+}
+
 
 function main(){
     
