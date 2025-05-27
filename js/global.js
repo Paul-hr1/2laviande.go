@@ -29,48 +29,57 @@ function confirmer(page){
 }
 
 function handleNavigation(event, shouldConfirm = false, confirmMessage = "") {
-        const link = event.target.closest("a");
-        const viandeSection = event.target.closest("section.viande");
+    // Récupère le lien le plus proche de l'élément cliqué (s'il existe)
+    const link = event.target.closest("a");
+    // Vérifie si l'élément cliqué est dans une section avec la classe 'viande'
+    const viandeSection = event.target.closest("section.viande");
 
-    // If not an <a> and not inside .viande, exit
+    // Si ce n'est ni un lien <a>, ni une section .viande, on quitte la fonction
     if (!link && !viandeSection) return;
 
-    // If we're in .viande but didn't click the link directly, find the <a> inside it
+    // Si on a cliqué sur une section .viande mais pas directement sur un lien,
+    // on cherche un lien <a> à l’intérieur de cette section
     const targetLink = link || viandeSection.querySelector("a");
 
+    // On récupère la valeur de l'attribut href du lien
     const href = targetLink.getAttribute("href");
 
-    // Skip external links, mailto:, etc.
+    // Si le lien est externe (commence par http, mailto, etc.), on ne fait rien,
+    // on laisse le comportement par défaut du navigateur
     if (!href || href.startsWith("http") || href.startsWith("mailto:")) {
-        return; // Let default behavior happen
+        return;
     }
 
-        // Prevent default link behavior
-        event.preventDefault();
+    // Empêche le comportement par défaut du lien (navigation immédiate)
+    event.preventDefault();
 
-        // Optional confirmation dialog
-        if (shouldConfirm && !confirm(confirmMessage)) {
-            return; // Cancel navigation
-        }
+    // Si une confirmation est demandée, on affiche une boîte de dialogue.
+    // Si l'utilisateur annule, on arrête là.
+    if (shouldConfirm && !confirm(confirmMessage)) {
+        return;
+    }
 
-        const loader = document.getElementById("loader");
-        if (loader) loader.style.display = "block";
+    // Si un élément avec l'id "loader" existe, on l'affiche
+    const loader = document.getElementById("loader");
+    if (loader) loader.style.display = "block";
 
-        setTimeout(() => {
-            window.location.href = href;
-        }, 2000);
-    
+    // On attend 2 secondes, puis on redirige vers le lien
+    setTimeout(() => {
+        window.location.href = href;
+    }, 2000);
 
+    // Lors du chargement complet du DOM
     document.addEventListener("DOMContentLoaded", function () {
+        // Récupère l’élément avec l’ID "equipe"
         const equipeLink = document.getElementById("equipe");
 
+        // Si le lien existe, on lui ajoute un gestionnaire d'événement
         if (equipeLink) {
             equipeLink.addEventListener("click", function (event) {
+                // Appelle la fonction avec confirmation avant de naviguer
                 handleNavigation(event, true, "Voulez-vous vraiment naviguer vers la présentation de l'équipe ?");
             });
         }
-
-       
     });
 }
 
