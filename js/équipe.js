@@ -1,5 +1,5 @@
 window.onload = function() {
-  const liste = document.querySelectorAll(".grattage");
+  const liste = document.querySelectorAll(".grattage");  // prends les div
 
   liste.forEach(canvas => {
     const ctx = canvas.getContext("2d");
@@ -8,9 +8,9 @@ window.onload = function() {
     ctx.fillStyle = "gray";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.globalCompositeOperation = "destination-out";
+    ctx.globalCompositeOperation = "destination-out"; // la souris "enlève" l'image
 
-    let isDrawing = false;
+    let isDrawing = false; // verrou 
 
     function draw(event) {
       if (!isDrawing) return;
