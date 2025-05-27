@@ -13,7 +13,7 @@ window.onload = function() {
     let isDrawing = false; // verrou pour savoir s'il faut dessiner ou non
 
     function draw(event) {
-      if (!isDrawing) return;
+      if (!isDrawing) return; // condition 
 
       const rect = canvas.getBoundingClientRect(); // rectangle correspondant au curseur
       const x = (event.touches ? event.touches[0].clientX : event.clientX) - rect.left; // position x de la souris
